@@ -1,7 +1,5 @@
 package com.hank.SpringBootAPI.service;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,13 +32,11 @@ public class BeautyService {
 		try {
 			Document currentPage = HtmlUtil.loadHtml(nowPage);
 			
-			System.out.println(currentPage.toString());
-			Elements pageValue = currentPage.getElementsByTag("body");
-			
+//			System.out.println(currentPage.toString());
+			Elements pageValue = currentPage.getAllElements();
+			System.out.println(pageValue.get(0).text());
 			rtnData.put("data", pageValue.get(0).text());
-		} catch (MalformedURLException e) {
-			return null;
-		} catch (IOException e) {
+		} catch (Exception e) {
 			return null;
 		}
 
