@@ -37,6 +37,8 @@ public class BeautyService {
 			System.out.println(pageValue.get(0).text());
 			rtnData.put("data", pageValue.get(0).text());
 		} catch (Exception e) {
+			System.out.println("==========getSpecialBeautyData ERR==========");
+			System.out.println(e.toString());
 			return null;
 		}
 
