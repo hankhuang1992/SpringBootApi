@@ -27,6 +27,7 @@ public class BeautyService {
 	 * @return
 	 */
 	public Map<String, Object> getSpecialBeautyData() {
+		System.out.println("getSpecialBeautyData ===");
 		Map<String, Object> rtnData = new HashMap<String, Object>();
 		String nowPage = "https://www.dcard.tw/_api/forums/sex/posts?limit=30&popular=true";
 
