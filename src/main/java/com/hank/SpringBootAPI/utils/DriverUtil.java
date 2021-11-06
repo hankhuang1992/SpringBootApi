@@ -1,28 +1,39 @@
-package com.hank.SpringBootAPI.utils;
-
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-public class DriverUtil {
-
-	public void doOpen(){
-		System.setProperty("webdriver.chrome.driver", ".\\Tools\\chromedriver.exe");  
-        
-        //初始化一個chrome瀏覽器例項，例項名稱叫driver  
-        WebDriver driver = new ChromeDriver();  
-        //最大化視窗  
-        driver.manage().window().maximize();  
-        //設定隱性等待時間  
-        driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);  
-          
-        // get()開啟一個站點  
-        driver.get("https://www.dcard.tw/service/api/v2/forums/sex/posts?limit=30&popular=true");  
-        //getTitle()獲取當前頁面title的值  
-        System.out.println("當前開啟頁面的標題是： "+ driver.getTitle());  
-          
-        //關閉並退出瀏覽器  
-        driver.quit();  
-	}
-}
+//package com.hank.SpringBootAPI.utils;
+//
+//import java.util.concurrent.TimeUnit;
+//
+//import org.apache.commons.exec.environment.EnvironmentUtils;
+//import org.junit.jupiter.api.condition.OS;
+//import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.chrome.ChromeOptions;
+//
+//public class DriverUtil {
+//
+//	public WebDriver launchBrowser() {
+//		String driverPath = "";
+//		if (getOS().equals(OS.WINDOWS)) {
+//			driverPath = "agent//chromedriver.exe";
+//			System.setProperty("webdriver.chrome.driver", driverPath);
+//		}
+//
+//		ChromeOptions options = new ChromeOptions();
+//		options.addArguments("--headless");
+//		options.addArguments("window-size=1200x600");
+//		if (getOS().equals(OS.LINUX)) {
+//			try { // GOOGLE_CHROME_SHIM GOOGLE_CHROME_BIN
+//				String binaryPath = EnvironmentUtils.getProcEnvironment().get("GOOGLE_CHROME_SHIM");
+//				System.out.println("Path: " + binaryPath);
+//				options.setBinary(binaryPath);
+//				options.addArguments("--disable-gpu");
+//				options.addArguments("--no-sandbox");
+//			} catch (Exception e) {
+//
+//			}
+//		}
+//
+//		WebDriver driver = new ChromeDriver(options);
+//
+//		return driver;
+//	}
+//}

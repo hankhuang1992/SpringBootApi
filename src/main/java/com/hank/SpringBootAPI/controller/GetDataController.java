@@ -44,15 +44,15 @@ public class GetDataController {
 		return rtnData;
 	}
 	
-	/**
-	 * 取得 特別 表特
-	 * @param data
-	 * @return
-	 */
-	@RequestMapping(value = "/SpecialBeauty2", method = RequestMethod.GET)
-	public Map<String, Object> getSpecialBeautyData2() {
-		Map<String, Object> rtnData = beautyService.getSpecialBeautyData2();
-		return rtnData;
-	}
+//	/**
+//	 * 取得 特別 表特
+//	 * @param data
+//	 * @return
+//	 */
+//	@RequestMapping(value = "/SpecialBeauty2", method = RequestMethod.GET)
+//	public Map<String, Object> getSpecialBeautyData2() {
+//		Map<String, Object> rtnData = beautyService.getSpecialBeautyData2();
+//		return rtnData;
+//	}
 
 }
