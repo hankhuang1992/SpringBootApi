@@ -33,9 +33,7 @@ public class BeautyService {
 		try {
 			Document currentPage = HtmlUtil.loadHtml(nowPage);
 			
-			if (currentPage == null) {
-				System.out.println("no data");
-			}
+			System.out.println(currentPage.toString());
 			Elements pageValue = currentPage.getElementsByTag("body");
 			
 			rtnData.put("data", pageValue.get(0).text());
