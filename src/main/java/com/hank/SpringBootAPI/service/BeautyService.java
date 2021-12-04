@@ -50,7 +50,8 @@ public class BeautyService {
 		InputStream inputStream = HtmlUtil.constructInputStream(nowPage);
 		
 		if (inputStream == null) {
-			return null;
+			rtnData.put("htmlStr", "empty");
+			return rtnData;
 		}
 		
 		rtnData.put("htmlStr", CommonUtils.convertStreamToString(inputStream, "UTF-8"));
