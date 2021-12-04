@@ -1,5 +1,7 @@
 package com.hank.SpringBootAPI.controller;
 
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,18 @@ public class GetDataController {
 	BeautyService beautyService;
 	
 	/**
+	 * 時間 觸發啟動HEROKU
+	 * @param data
+	 * @return
+	 */
+	@RequestMapping(value = "/doStart", method = RequestMethod.GET)
+	public Map<String, Object> doStart() {
+		Map<String, Object> rtnData = new HashMap<String, Object>();
+		rtnData.put("status", "ok");
+		return rtnData;
+	}
+	
+	/**
 	 * 取得股票
 	 * @param data
 	 * @return
@@ -37,9 +51,10 @@ public class GetDataController {
 	 * 取得 特別 表特
 	 * @param data
 	 * @return
+	 * @throws IOException 
 	 */
 	@RequestMapping(value = "/SpecialBeauty", method = RequestMethod.GET)
-	public Map<String, Object> getSpecialBeautyData() {
+	public Map<String, Object> getSpecialBeautyData() throws IOException {
 		Map<String, Object> rtnData = beautyService.getSpecialBeautyData();
 		return rtnData;
 	}
